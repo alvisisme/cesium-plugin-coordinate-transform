@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/cesium/Build/Cesium/Widgets/widgets.css" />
+    <script src="../node_modules/cesium/Build/Cesium/Cesium.js"></script>
+    <script src="../index.js"></script>
+    <link rel="stylesheet" href="app.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cesiumContainer" class="fullWindow"></div>
+    <script>
+        const viewer = new Cesium.Viewer("cesiumContainer")
+        const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas)
+        handler.setInputAction(function (click) {
+            if (click.position) {
+                const coorTrans = new CoorTrans(viewer)
+                var cartesian3= viewer.scene.pickPosition(click.position)
+                const degree = coorTrans.fromCartesian3ToDegree(cartesian3)
+                console.log(degree)
+            }   
+        }, Cesium.ScreenSpaceEventType.LEFT_CLICK)
+        
+        // console.log(testRunner.fromScreenToCartesian3(0, 0))
+    </script>
+</body>
+</html>

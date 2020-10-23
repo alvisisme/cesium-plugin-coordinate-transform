@@ -1,0 +1,18 @@
+{
+  "name": "cesium-plugin-coordinate-transform",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alvisisme/cesium-plugin-coordinate-transform.git"
+  },
+  "author": "Alvis Zhao",
+  "license": "MIT",
+  "dependencies": {
+    "cesium": "^1.74.0"
+  }
+}
