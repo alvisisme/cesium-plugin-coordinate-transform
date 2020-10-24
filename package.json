@@ -2,9 +2,11 @@
   "name": "cesium-plugin-coordinate-transform",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "module": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch",
+    "start": "webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
@@ -12,7 +14,15 @@
   },
   "author": "Alvis Zhao",
   "license": "MIT",
-  "dependencies": {
-    "cesium": "^1.74.0"
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "cesium": "^1.74.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.1.0",
+    "webpack-dev-server": "^3.11.0"
   }
 }

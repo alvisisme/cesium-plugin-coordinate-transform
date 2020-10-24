@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../node_modules/cesium/Build/Cesium/Widgets/widgets.css" />
     <script src="../node_modules/cesium/Build/Cesium/Cesium.js"></script>
-    <script src="../index.js"></script>
+    <script src="../dist/cesium.plugin.coordinate.transform.min.js"></script>
     <link rel="stylesheet" href="app.css">
     <title>Document</title>
 </head>
@@ -16,7 +16,8 @@
         const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas)
         handler.setInputAction(function (click) {
             if (click.position) {
-                const coorTrans = new CoorTrans(viewer)
+                const CesiumPlugin = CoorTrans.default
+                const coorTrans = new CesiumPlugin.CoorTrans(viewer)
                 var cartesian3= viewer.scene.pickPosition(click.position)
                 const degree = coorTrans.fromCartesian3ToDegree(cartesian3)
                 console.log(degree)
